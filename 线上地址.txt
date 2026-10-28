@@ -1,0 +1,8 @@
+晶晶 × 以轩 · 我们的小小日子
+
+线上地址：https://kirito23lyx.github.io/our-little-days/
+胶片风格：https://kirito23lyx.github.io/our-little-days/?theme=film
+奶油风格：https://kirito23lyx.github.io/our-little-days/?theme=cream
+
+托管：GitHub Pages（kirito23lyx/our-little-days，main 分支根目录）
+发布状态：已上线，公开可见（2026-10-28，北京时间）

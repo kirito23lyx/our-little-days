@@ -58,16 +58,32 @@ our-little-days/
 └─ 打开网站.cmd
 ```
 
-## 等要发给她的时候
+## 线上地址（已发布）
 
-`file://` 只能自己电脑上打开，发链接得先放到网上。任意静态托管都行，把整个 `our-little-days` 目录传上去即可：
+**https://kirito23lyx.github.io/our-little-days/**
 
-- GitHub Pages（免费、最省事）
-- Netlify / Vercel（拖拽上传，几十秒）
-- 腾讯云 COS / 阿里云 OSS（国内访问快）
+- 已用 GitHub Pages 发布，**公开可见**，手机微信里点开就能看，不用登录。
+- 仓库：<https://github.com/kirito23lyx/our-little-days>
+- 想带风格直接分享：在链接后面加 `?theme=film`（胶片）或 `?theme=cream`（奶油）。
 
-小提醒：照片是你们两个人的，公开托管的链接谁拿到都能看。想稳妥一点，可以
-① 用带访问密码的托管（Netlify 有 Password protection、Cloudflare Pages 有 Access）；
-② 或者先只发给她一个人，过阵子再撤下。
+### 以后改了内容怎么更新
 
-如果需要一个「输入口令才能进」的页面，告诉我，可以再加。
+在这个文件夹里执行：
+
+```bat
+git add -A
+git commit -m "update"
+git push
+```
+
+推上去大约 1 分钟后线上自动更新（GitHub Pages 会重新构建）。
+
+### 关于隐私
+
+GitHub Pages 的免费方案要求仓库是公开的，所以照片和源码都在公开仓库里，
+拿到链接的人都能看，搜索引擎理论上也可能收录。如果哪天想收紧：
+
+- 换成 Netlify / Cloudflare Pages（可以配合私密仓库 + 访问密码）；或
+- 把仓库删掉、把链接撤下（但已经被人保存的图片收不回来）。
+
+需要「输口令才能进」的页面，可以再加。

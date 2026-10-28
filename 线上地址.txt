@@ -1,8 +1,30 @@
 晶晶 × 以轩 · 我们的小小日子
 
-线上地址：https://kirito23lyx.github.io/our-little-days/
+【正式地址（已上线）】
+https://kirito23lyx.github.io/our-little-days/
+
 胶片风格：https://kirito23lyx.github.io/our-little-days/?theme=film
 奶油风格：https://kirito23lyx.github.io/our-little-days/?theme=cream
+二维码：同目录下的「访问二维码.png」，微信里发图给她扫
 
-托管：GitHub Pages（kirito23lyx/our-little-days，main 分支根目录）
-发布状态：已上线，公开可见（2026-10-28，北京时间）
+【托管方式】
+GitHub Pages，仓库 kirito23lyx/our-little-days（main 分支根目录）
+免费、不用服务器、不用域名，公开可见。
+状态核对时间：2026-10-29 00:12（北京时间），首页与图片均返回 200。
+
+【以后改了内容怎么更新】
+在本文件夹执行：
+    git add -A
+    git commit -m "update"
+    git push
+约 1 分钟后线上自动生效。
+
+【已知限制】
+github.io 在国内部分网络（尤其移动网络）可能较慢或打不开，属网络原因，不是网站问题。
+若确实打不开，备选：
+ 1) Netlify（国内实测 137 个节点中 131 个可直连，需注册免费账号）
+ 2) 腾讯云 EdgeOne / 对象存储 + 已备案域名（国内节点，最稳，需域名+备案）
+
+【其他】
+- 本地开发用的临时 CLI 目录已清理；腾讯云 CLI 的登录凭据还留在 C:\Users\ASUS\.edgeone，可用 edgeone logout 清除。
+- EdgeOne 上有一个已部署的私有预览项目（our-little-days，需令牌访问），不影响使用，可在控制台删除。

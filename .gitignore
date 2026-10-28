@@ -2,3 +2,5 @@
 preview/
 tools/shoot.cjs
 tools/test.cjs
+# 发布用的干净目录（本地生成，每次重新打包）
+dist/

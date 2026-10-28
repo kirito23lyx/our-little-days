@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<html lang="zh-CN" data-theme="cream">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf5ec">
+<title>晶晶 × 以轩 · 我们的小小日子</title>
+<meta name="description" content="黄晶晶与刘以轩的私人小站：我们的日子、照片、纪念日，还有两个小游戏。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c07a63'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='%23fffaf3'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  /* 先记住上次选的风格，避免打开时闪一下；同时标记 JS 可用 */
+  (function () {
+    var t = null;
+    try { t = new URLSearchParams(location.search).get('theme'); } catch (e) {}
+    if (t !== 'film' && t !== 'cream') {
+      try { t = localStorage.getItem('jj-yx-theme'); } catch (e) {}
+    }
+    if (t === 'film' || t === 'cream') document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.className += ' js';
+  })();
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="#home" aria-label="回到顶部">
+    <span class="brand-mark" aria-hidden="true">♡</span>
+    <span class="brand-text"><span class="brand-long">JINGJING<span class="brand-x">×</span>YIXUAN</span><span class="brand-short">JJ × YX</span></span>
+  </a>
+
+  <nav class="nav" id="nav" aria-label="页面导航">
+    <a href="#home">开场</a>
+    <a href="#timeline">时间线</a>
+    <a href="#album">相册</a>
+    <a href="#dates">纪念日</a>
+    <a href="#play">小游戏</a>
+  </nav>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换风格：胶片 / 奶油">
+    <span class="tt-option" data-mode="film">胶片</span>
+    <span class="tt-option" data-mode="cream">奶油</span>
+    <span class="tt-knob" aria-hidden="true"></span>
+  </button>
+</header>
+
+<main>
+  <!-- ───────────────── 开场首页 ───────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker"><span class="kicker-line"></span>OUR LITTLE DAYS · 2026</p>
+        <h1 class="hero-names">
+          <span class="name">黄晶晶</span>
+          <span class="hero-heart" aria-hidden="true">
+            <svg viewBox="0 0 32 30" width="100%" height="100%"><path d="M16 29S0 19.5 0 9.6C0 4.3 4.2 0 9.4 0 12.4 0 15 1.6 16 3.6 17 1.6 19.6 0 22.6 0 27.8 0 32 4.3 32 9.6 32 19.5 16 29 16 29z" fill="currentColor"/></svg>
+          </span>
+          <span class="name">刘以轩</span>
+        </h1>
+
+        <p class="hero-label">我们已经在一起</p>
+        <p class="hero-days">
+          <span class="days-num" id="daysCount">0</span><span class="days-unit">天</span>
+        </p>
+        <p class="hero-live">
+          <span class="live-dot" aria-hidden="true"></span>
+          今天 · <span id="todayText"></span>
+          <span class="live-sep" aria-hidden="true">/</span>
+          <span id="nowClock">--:--:--</span>
+        </p>
+
+        <p class="hero-note">日子本来是平的。<br>从 2026 年 10 月 10 号起，日子有了刻度。</p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#timeline">看看我们的故事</a>
+          <a class="btn btn-ghost" href="#play">玩个小游戏</a>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <span class="sprockets" aria-hidden="true"></span>
+        <div class="frame">
+          <img src="assets/img/hero.webp" alt="晶晶和以轩在走廊上的合照" width="1900" height="1425">
+          <span class="frame-stitch" aria-hidden="true"></span>
+        </div>
+        <figcaption><i>2026.10.17</i><span>山脚下，风正好</span></figcaption>
+      </figure>
+    </div>
+
+    <a class="scroll-hint" href="#timeline" aria-label="往下看"><span></span>向下</a>
+  </section>
+
+  <!-- ───────────────── 回忆时间线 ───────────────── -->
+  <section class="section" id="timeline">
+    <div class="sec-head reveal">
+      <span class="sec-no">01</span>
+      <h2>回忆时间线</h2>
+      <p class="sec-sub">第一次见面、第一次牵手、每一次出门，都按日期排好了。</p>
+    </div>
+    <ol class="timeline" id="timelineList"></ol>
+  </section>
+
+  <!-- ───────────────── 专属相册 ───────────────── -->
+  <section class="section" id="album">
+    <div class="sec-head reveal">
+      <span class="sec-no">02</span>
+      <h2>专属相册</h2>
+      <p class="sec-sub">按约会、旅行、日常分组。点开可以放大，左右滑动翻页。</p>
+    </div>
+
+    <div class="album-bar reveal">
+      <div class="album-filters" id="albumFilters" role="tablist" aria-label="相册分组">
+        <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">全部<span class="chip-n"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-filter="date">约会<span class="chip-n"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-filter="travel">旅行<span class="chip-n"></span></button>
+        <button class="chip" role="tab" aria-selected="false" data-filter="daily">日常<span class="chip-n"></span></button>
+      </div>
+      <p class="album-count" id="albumCount"></p>
+    </div>
+
+    <div class="album-grid" id="albumGrid"></div>
+  </section>
+
+  <!-- ───────────────── 纪念日 ───────────────── -->
+  <section class="section" id="dates">
+    <div class="sec-head reveal">
+      <span class="sec-no">03</span>
+      <h2>纪念日</h2>
+      <p class="sec-sub">恋爱纪念日、两个人的生日，还有下一个要等的日子。</p>
+    </div>
+
+    <div class="next-up reveal" id="nextUp">
+      <div class="next-up-label">下一个重要日子</div>
+      <div class="next-up-main">
+        <span class="next-up-days" id="nextUpDays">--</span>
+        <span class="next-up-unit">天</span>
+      </div>
+      <div class="next-up-meta">
+        <strong id="nextUpTitle">--</strong>
+        <span id="nextUpDate">--</span>
+      </div>
+    </div>
+
+    <div class="date-grid" id="dateGrid"></div>
+  </section>
+
+  <!-- ───────────────── 互动小游戏 ───────────────── -->
+  <section class="section" id="play">
+    <div class="sec-head reveal">
+      <span class="sec-no">04</span>
+      <h2>互动小游戏</h2>
+      <p class="sec-sub">一个用合照做的九宫格拼图，一套「你还记得吗」的小问答。</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="小游戏">
+      <button class="tab is-active" role="tab" aria-selected="true" data-panel="puzzle">拼图</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="quiz">你还记得吗</button>
+    </div>
+
+    <!-- 拼图 -->
+    <div class="panel reveal" id="panel-puzzle" role="tabpanel">
+      <div class="puzzle-wrap">
+        <div class="puzzle-board" id="puzzleBoard" role="application" aria-label="九宫格拼图">
+          <div class="puzzle-peek" id="puzzlePeekImg" aria-hidden="true"></div>
+        </div>
+
+        <div class="puzzle-side">
+          <p class="puzzle-hint">点一下空位旁边的照片块，就能把它挪过去。把九块拼回原样就算赢。</p>
+          <dl class="puzzle-stats">
+            <div><dt>步数</dt><dd id="puzzleMoves">0</dd></div>
+            <div><dt>用时</dt><dd id="puzzleTimer">00:00</dd></div>
+          </dl>
+          <div class="puzzle-actions">
+            <button class="btn btn-sm" id="puzzleShuffle" type="button">打乱重玩</button>
+            <button class="btn btn-sm btn-ghost" id="puzzlePeek" type="button">看看原图</button>
+          </div>
+          <p class="puzzle-msg" id="puzzleMsg" hidden></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 问答 -->
+    <div class="panel reveal" id="panel-quiz" role="tabpanel" hidden>
+      <div class="quiz">
+        <div class="quiz-top">
+          <span class="quiz-progress" id="quizProgress">第 1 / 6 题</span>
+          <button class="btn btn-sm btn-ghost" id="quizRestart" type="button">重新开始</button>
+        </div>
+        <p class="quiz-q" id="quizQuestion"></p>
+        <div class="quiz-options" id="quizOptions"></div>
+        <p class="quiz-after" id="quizAfter" hidden></p>
+        <button class="btn quiz-next" id="quizNext" type="button" hidden>下一题</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer-mark" aria-hidden="true">♡</p>
+  <p class="footer-letter">写给晶晶：<br>这个站点没什么用处，只想让你在某个普通的下午，<br class="br-desktop">打开它的时候笑一下。</p>
+  <p class="footer-sign">以轩 · 2026</p>
+  <p class="footer-note">made with ♡ · 仅属于我们两个</p>
+</footer>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="照片大图">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="关闭">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="上一张">‹</button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="下一张">›</button>
+  <figure class="lb-figure">
+    <img id="lbImage" alt="">
+    <figcaption>
+      <span class="lb-index" id="lbCounter"></span>
+      <span class="lb-date" id="lbDate"></span>
+      <span class="lb-caption" id="lbCaption"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script src="assets/js/photos.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

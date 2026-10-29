@@ -53,7 +53,7 @@
   }
 
   /* ---------------- 2. 开场：天数与时钟 ---------------- */
-  var SITE = window.SITE || { together: '2026-10-10' };
+  var SITE = window.SITE || { together: '2026-10-09' };
   var together = parseDate(SITE.together);
 
   function countUp(el, target) {

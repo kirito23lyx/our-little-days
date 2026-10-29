@@ -14,7 +14,7 @@ window.PHOTOS = [
     "id": 14,
     "group": "date",
     "date": "2026.10.11",
-    "caption": "第一次拍大头贴，纸条上印着 26.10.10",
+    "caption": "第一次拍大头贴，四格都是我们",
     "w": 1700,
     "h": 1280,
     "src": "assets/img/p14.webp",
